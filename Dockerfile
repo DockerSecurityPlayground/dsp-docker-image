@@ -6,8 +6,6 @@ RUN git clone https://github.com/giper45/DockerSecurityPlayground.git /home
 WORKDIR /home/DockerSecurityPlayground
 
 RUN npm install
-COPY run.sh /run.sh
 
 EXPOSE 8080
-
 ENTRYPOINT ["/bin/bash", "/run.sh"]
