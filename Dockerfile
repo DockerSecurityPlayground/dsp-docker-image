@@ -1,12 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt update
-RUN apt -qq update
-RUN apt install -y python build-essential git
-RUN apt install -y nodejs npm
-RUN apt install -y docker.io
-RUN apt install -y docker-compose
-
+RUN apt-get -qq update && apt-get install -y python build-essential git curl && curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y docker.io docker-compose nodejs
 RUN git clone https://github.com/giper45/DockerSecurityPlayground.git /home
 
 WORKDIR /home/DockerSecurityPlayground
