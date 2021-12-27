@@ -6,4 +6,4 @@ git clone https://github.com/giper45/dsp-docker-image
 cd dsp-docker-image  
 docker-compose up
 ```   
-DSP runs on http://localhost:18080
+DSP runs on http://localhost:18181
