@@ -7,5 +7,7 @@ WORKDIR /home/DockerSecurityPlayground
 
 RUN npm install
 
-EXPOSE 8080
-ENTRYPOINT ["/bin/bash", "/run.sh"]
+COPY . .
+
+ENTRYPOINT ["/bin/bash", "./run.sh"]
+

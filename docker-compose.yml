@@ -1,9 +1,15 @@
 version: '3.3'
 services:
     dsp:
-        image: dockersecplayground/dsp
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+            network: host
+        environment:
+            DSP_IFACE: 0.0.0.0
         ports:
-            - '8080:8080'
+            - '8080:18181'
         volumes:
             - '/var/run/docker.sock:/var/run/docker.sock'
             - './data_dsp:/root'
+
