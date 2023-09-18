@@ -1,13 +1,16 @@
-FROM ubuntu:18.04
+FROM docker:dind
 
-RUN apt-get -qq update && apt-get install -y python build-essential git curl && curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y docker.io docker-compose nodejs
-RUN git clone https://github.com/giper45/DockerSecurityPlayground.git /home
+RUN apk add --no-cache npm nodejs docker docker-compose python3 alpine-sdk git bash
+#&& curl -sL https://deb.nodesource.com/setup_10.x | 
+EXPOSE 18181
 
-WORKDIR /home/DockerSecurityPlayground
+# VOLUME /var/lib/docker
+RUN git clone https://github.com/giper45/DockerSecurityPlayground.git /opt/DockerSecurityPlayground
+
+WORKDIR /opt/DockerSecurityPlayground
 
 RUN npm install
+COPY run.sh /run.sh
 
-COPY . .
-
-ENTRYPOINT ["/bin/bash", "./run.sh"]
-
+# ENTRYPOINT tail -f /dev/null
+ENTRYPOINT /run.sh

@@ -1,2 +1,7 @@
 data_dsp
 !data_dsp/.keep
+
+DockerSecurityPlayground
+DSP
+
+config/config_user.json

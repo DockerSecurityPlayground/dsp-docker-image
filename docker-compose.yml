@@ -4,12 +4,15 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile
-            network: host
+            # network: host
         environment:
             DSP_IFACE: 0.0.0.0
         ports:
             - '18181:18181'
+            - '14500:14500'
+        privileged: true
         volumes:
             - '/var/run/docker.sock:/var/run/docker.sock'
             - './data_dsp:/root'
+            - './config:/opt/DockerSecurityPlayground/config'
 

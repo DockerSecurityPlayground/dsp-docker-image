@@ -1,0 +1,15 @@
+FROM ubuntu:22.04
+
+RUN apt-get -qq update && apt-get install -y python3 build-essential git curl  docker.io docker-compose nodejs npm
+#&& curl -sL https://deb.nodesource.com/setup_10.x | 
+RUN git clone https://github.com/giper45/DockerSecurityPlayground.git /home
+
+VOLUME /var/lib/docker
+WORKDIR /opt/DockerSecurityPlayground
+
+RUN npm install
+
+COPY . .
+
+ENTRYPOINT ["/bin/bash", "./run.sh"]
+

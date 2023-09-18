@@ -1,0 +1,69 @@
+{
+  "images":[
+    { 
+      "label": "dirb",
+      "name": "hypnza/dirb",
+      "tag": "latest",
+      "description": "Dirb container",
+      "default_command": "-u localhost"
+    },
+    { 
+      "label": "dirbuster",
+      "name": "hypnza/dirbuster",
+      "tag": "latest",
+      "description": "Dirbuster container",
+      "default_command": "-u localhost"
+    },
+    { 
+      "label": "dirhunt",
+      "name": "trevorbryant/dirhunt",
+      "tag": "latest",
+      "description": "Dihunt container",
+      "default_command": "http://localhost:18080/bodgeit/"
+    },
+    { 
+      "label": "network_tools",
+      "name": "praqma/network-multitool",
+      "tag": "latest",
+      "description": "Network multi tools (https://hub.docker.com/r/praqma/network-multitool/)",
+      "default_command": "ifconfig"
+    },
+    { 
+      "label": "nmap",
+      "name": "uzyexe/nmap",
+      "tag": "latest",
+      "description": "nmap container image",
+      "default_command": "-sT localhost"
+    },
+    {
+      "label": "tcpdump",
+      "name": "itsthenetwork/alpine-tcpdump",
+      "tag": "latest",
+      "description": "Tcpdump container",
+      "default_command": "-i any",
+      "default_options":  {
+        "privileged": true
+      }
+    },
+    {
+      "label": "wpscan",
+      "name": "wpscanteam/wpscan",
+      "tag": "latest",
+      "description": "Wpscan container",
+      "default_command": "--url https://target.tld/ ",
+      "default_options":  {
+        "privileged": true
+      }
+    },
+    {
+      "label": "pentest-tools",
+      "name": "szalek/pentest-tools",
+      "tag": "latest",
+      "description": "This containers has:\n- https://hub.docker.com/r/szalek/pentest-tools/",
+      "default_command": "--url https://target.tld/ ",
+      "default_options":  {
+        "privileged": true
+      }
+    }
+  ]
+}
